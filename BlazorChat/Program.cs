@@ -9,7 +9,9 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 //Step 1 Start
-builder.Services.AddSignalR();
+builder.Services.AddSignalR(opts =>
+         opts.EnableDetailedErrors = true
+    );
 builder.Services.AddResponseCompression(opts =>
 {
     opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
